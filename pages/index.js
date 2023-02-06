@@ -179,7 +179,7 @@ export default function Home() {
               <label htmlFor="scalewayChoice1">Multi</label>
               <input
                 onChange={() =>
-                  setScalewayStorage({ multi: true, single: false })
+                  setScalewayStorage({ multi: false, single: true })
                 }
                 type="radio"
                 id="scalewayChoice2"
