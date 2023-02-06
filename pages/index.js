@@ -71,14 +71,19 @@ export default function Home() {
   };
 
   const resultScalewayCom = () => {
-    const result = providers.scalewayCom.map(
-      (item) =>
-        (scalewayStorage.multi
-          ? item.storagePriceMulti
-          : item.storagePriceSingle) *
-          (storage < 75 ? 0 : storage) +
-        item.transferPrice * transfer
-    );
+    const result = providers.scalewayCom.map((item) => {
+      if (storage < 75 || transfer < 75) {
+        return 0;
+      } else {
+        return (
+          (scalewayStorage.multi
+            ? item.storagePriceMulti
+            : item.storagePriceSingle) *
+            storage +
+          item.transferPrice * transfer
+        );
+      }
+    });
     return result[0].toFixed(2);
   };
 
