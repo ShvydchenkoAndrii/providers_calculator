@@ -1,13 +1,18 @@
-const Providers = ({ bunnyStorage, scalewayStorage, setBunnyStorage, setScalewayStorage}) => {
+const Providers = ({
+  bunnyStorage,
+  scalewayStorage,
+  setBunnyStorage,
+  setScalewayStorage,
+}) => {
   return (
-    <div className="flex flex-col gap-10">
-      <div className="flex">
+    <div className="flex sm:flex-col sm:gap-10 gap-4 sm:left-0 sm:top-0 left-10 bottom-[100px] sm:relative absolute">
+      <div className="sm:text-[18px] text-[14px]">
         <div>backlaze.com</div>
       </div>
       <div>
-        <div>bunny.net</div>
+        <div className="text-[14px] sm:text-[18px]">bunny.net</div>
         <div>
-          <label className="text-[12px] mr-3 ">
+          <label className="sm:text-[12px] text-[10px] mr-3 ">
             <input
               onChange={() => setBunnyStorage({ hdd: true, sdd: false })}
               type="radio"
@@ -18,7 +23,7 @@ const Providers = ({ bunnyStorage, scalewayStorage, setBunnyStorage, setScaleway
             ></input>
             <span> HDD</span>
           </label>
-          <label className="text-[12px]">
+          <label className="sm:text-[12px] text-[10px]">
             <input
               onChange={() => setBunnyStorage({ hdd: false, sdd: true })}
               type="radio"
@@ -31,7 +36,7 @@ const Providers = ({ bunnyStorage, scalewayStorage, setBunnyStorage, setScaleway
         </div>
       </div>
       <div>
-        <div>scaleway.com</div>
+        <div className="text-[14px] sm:text-[18px]">scaleway.com</div>
         <div>
           <label className="text-[12px] mr-3">
             <input
@@ -61,7 +66,7 @@ const Providers = ({ bunnyStorage, scalewayStorage, setBunnyStorage, setScaleway
         </div>
       </div>
       <div>
-        <span>vultr.com</span>
+        <div className="text-[14px] sm:text-[18px]">vultr.com</div>
       </div>
     </div>
   );

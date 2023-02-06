@@ -1,6 +1,6 @@
 const StorageTransfer = ({ storage, transfer, storageVal, transferVal }) => {
   return (
-    <div className="flex justify-around gap-10 absolute">
+    <div className="flex justify-around gap-10 sm:top-[30px] bottom-[40px] left-[80px] absolute">
       <div className="flex flex-col">
         <div>Storage: {storage} GB</div>
         <input

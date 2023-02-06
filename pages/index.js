@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { useState, React, useEffect, useRef } from "react";
-import Chart from "../components/Chart/Chart";
-import Providers from "../components/Providers/Providers";
-import StorageTransfer from "../components/StorageTranfer/StorageTransfer";
+import React, { useState, useEffect, useRef } from "react";
+import Desktop from "../components/Desktop/Desktop";
+import Mobile from "../components/Mobile/Mobile";
 
-export default function Home() {
+export const AppContext = React.createContext();
+function Home() {
   const providers = {
     backlazeCom: [{ minPayment: 7, storagePrice: 0.005, transferPrice: 0.01 }],
     bunnyNet: [
@@ -90,33 +90,35 @@ export default function Home() {
     return Math.max(5, result[0]).toFixed(2);
   };
 
+  const value = {
+    storage,
+    transfer,
+    handlerStorageVal,
+    handlerTransferVal,
+    bunnyStorage,
+    scalewayStorage,
+    setBunnyStorage,
+    setScalewayStorage,
+    resultBacklazeCom,
+    resultBunnyNet,
+    resultScalewayCom,
+    resultVultrCom,
+  };
+
   return (
-    <div className="flex items-start m-10 static w-full">
+    <AppContext.Provider value={value}>
       <Head>
         <title>Providers calculator</title>
       </Head>
       <div>
-        <StorageTransfer
-          storage={storage}
-          transfer={transfer}
-          storageVal={(e) => handlerStorageVal(e)}
-          transferVal={(e) => handlerTransferVal(e)}
-        />
-        <div className="flex absolute top-[100px]">
-          <Providers
-            bunnyStorage={bunnyStorage}
-            scalewayStorage={scalewayStorage}
-            setBunnyStorage={setBunnyStorage}
-            setScalewayStorage={setScalewayStorage}
-          />
-          <Chart
-            resultBacklazeCom={resultBacklazeCom}
-            resultBunnyNet={resultBunnyNet}
-            resultScalewayCom={resultScalewayCom}
-            resultVultrCom={resultVultrCom}
-          />
+        <div className="hidden items-start m-10 static w-full sm:flex">
+          <Desktop />
+        </div>
+        <div className="flex sm:hidden">
+          <Mobile />
         </div>
       </div>
-    </div>
+    </AppContext.Provider>
   );
 }
+export default Home;

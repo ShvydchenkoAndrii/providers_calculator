@@ -5,7 +5,7 @@ const Chart = ({
   resultVultrCom,
 }) => {
   return (
-    <div className="flex flex-col items-start ml-3 border-l-2 relative">
+    <div className="flex sm:flex-col items-start ml-3 border-l-2 relative">
       <div className="flex absolute">
         <div
           className={`bg-green`}
