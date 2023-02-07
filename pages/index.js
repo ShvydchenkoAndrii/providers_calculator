@@ -108,9 +108,7 @@ function Home() {
       <Head>
         <title>Providers calculator</title>
       </Head>
-      <div>
-        <MainApp />
-      </div>
+      <MainApp />
     </AppContext.Provider>
   );
 }
