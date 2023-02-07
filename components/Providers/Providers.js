@@ -7,25 +7,25 @@ const Providers = () => {
     store;
 
   return (
-    <div className="flex sm:flex-col sm:gap-10 gap-[10px] sm:left-0 sm:top-0 left-[5%] bottom-[140px] sm:relative absolute">
-      <div className="sm:text-[18px] text-[14px]">
+    <div className="flex sm:flex-col sm:gap-10 gap-2.5 sm:mx-0 mx-10 ">
+      <div className="sm:text-lg text-sm">
         <div>backlaze.com</div>
       </div>
       <div>
-        <div className="text-[14px] sm:text-[18px]">bunny.net</div>
+        <div className="text-sm sm:text-lg">bunny.net</div>
         <div className="flex">
-          <div className="sm:text-[12px] text-[10px] mr-3">
+          <label className="sm:text-xs text-[10px] sm:mr-3 mr-3">
             <input
               type="radio"
               id="hdd"
               name="hdd-ssd"
               value="hdd"
-              required
+              defaultChecked={bunnyStorage.hdd}
               onChange={() => setBunnyStorage({ hdd: true })}
             ></input>
             <span> HDD</span>
-          </div>
-          <div className="sm:text-[12px] text-[10px]">
+          </label>
+          <label className="sm:text-xs text-[10px]">
             <input
               type="radio"
               id="ssd"
@@ -34,13 +34,13 @@ const Providers = () => {
               onChange={() => setBunnyStorage({ hdd: false })}
             ></input>
             <span> SSD</span>
-          </div>
+          </label>
         </div>
       </div>
       <div>
-        <div className="text-[14px] sm:text-[18px]">scaleway.com</div>
+        <div className="text-sm sm:text-lg">scaleway.com</div>
         <div className="flex">
-          <div className="sm:text-[12px] text-[10px] mr-3">
+          <label className="sm:text-xs text-[10px] mr-3">
             <input
               onChange={() => setScalewayStorage({ multi: true })}
               type="radio"
@@ -49,22 +49,22 @@ const Providers = () => {
               value="multi"
             ></input>
             <span> Multi</span>
-          </div>
-          <div className="sm:text-[12px] text-[10px] mr-3">
+          </label>
+          <label className="sm:text-xs text-[10px] mr-3">
             <input
               onChange={() => setScalewayStorage({ multi: false })}
               type="radio"
               id="scalewayChoice2"
               name="scaleway"
               value="single"
-              checked={!scalewayStorage.multi}
+              defaultChecked={!scalewayStorage.multi}
             ></input>
             <span> Single</span>
-          </div>
+          </label>
         </div>
       </div>
       <div>
-        <div className="text-[14px] sm:text-[18px]">vultr.com</div>
+        <div className="text-sm sm:text-lg">vultr.com</div>
       </div>
     </div>
   );

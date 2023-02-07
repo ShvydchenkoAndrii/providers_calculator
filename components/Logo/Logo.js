@@ -1,9 +1,9 @@
 import logo from "/images/no_icon.png";
 import Image from "next/image";
-console.log(logo);
+
 const Logo = () => {
   return (
-    <div className="flex sm:flex-col absolute sm:relative sm:gap-[27px] sm:bottom-0 sm:left-0 bottom-[190px] gap-[50px] left-[7%]">
+    <div className="flex sm:flex-col sm:gap-6 gap-10 sm:mt-0 mt-20 sm:mx-0 mx-[70px]">
       <Image src={logo} alt="backlaze.com logo" width={50}></Image>
       <Image src={logo} alt="bunny.net logo" width={50}></Image>
       <Image src={logo} alt="scaleway.com logo" width={50}></Image>

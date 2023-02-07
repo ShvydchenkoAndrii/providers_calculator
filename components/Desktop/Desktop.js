@@ -6,7 +6,7 @@ const Desktop = () => {
   return (
     <div>
       <StorageTransfer />
-      <div className="flex absolute top-[100px]">
+      <div className="flex">
         <Providers />
         <Logo />
         <Chart />
