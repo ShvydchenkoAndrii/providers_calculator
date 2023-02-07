@@ -1,9 +1,10 @@
-const Providers = ({
-  bunnyStorage,
-  scalewayStorage,
-  setBunnyStorage,
-  setScalewayStorage,
-}) => {
+import { useContext } from "react";
+import { AppContext } from "../../pages";
+
+const Providers = () => {
+  const store = useContext(AppContext);
+  const { bunnyStorage, scalewayStorage, setBunnyStorage, setScalewayStorage } =
+    store;
   return (
     <div className="flex sm:flex-col sm:gap-10 gap-4 sm:left-0 sm:top-0 left-10 bottom-[100px] sm:relative absolute">
       <div className="sm:text-[18px] text-[14px]">

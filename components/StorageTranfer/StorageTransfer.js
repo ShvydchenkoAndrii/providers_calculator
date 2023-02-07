@@ -1,4 +1,9 @@
-const StorageTransfer = ({ storage, transfer, storageVal, transferVal }) => {
+import { useContext } from "react";
+import { AppContext } from "../../pages";
+
+const StorageTransfer = () => {
+  const store = useContext(AppContext);
+  const { storage, transfer, storageVal, transferVal } = store;
   return (
     <div className="flex justify-around gap-10 sm:top-[30px] bottom-[40px] left-[80px] absolute">
       <div className="flex flex-col">
@@ -11,7 +16,7 @@ const StorageTransfer = ({ storage, transfer, storageVal, transferVal }) => {
           max={1000}
           step={1}
           defaultValue={storage}
-          onChange={(event) => storageVal(event)}
+          // onChange={(event) => storageVal(event)}
         ></input>
       </div>
       <div className="flex flex-col">

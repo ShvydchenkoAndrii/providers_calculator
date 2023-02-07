@@ -1,9 +1,14 @@
-const Chart = ({
-  resultBacklazeCom,
-  resultBunnyNet,
-  resultScalewayCom,
-  resultVultrCom,
-}) => {
+import { useContext } from "react";
+import { AppContext } from "../../pages";
+
+const Chart = () => {
+  const store = useContext(AppContext);
+  const {
+    resultBacklazeCom,
+    resultBunnyNet,
+    resultScalewayCom,
+    resultVultrCom,
+  } = store;
   return (
     <div className="flex sm:flex-col items-start ml-3 border-l-2 relative">
       <div className="flex absolute">
