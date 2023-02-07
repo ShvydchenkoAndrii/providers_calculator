@@ -33,10 +33,9 @@ function Home() {
 
   const [storage, setStorage] = useState(100);
   const [transfer, setTransfer] = useState(400);
-  const [bunnyStorage, setBunnyStorage] = useState({ hdd: true, ssd: false });
+  const [bunnyStorage, setBunnyStorage] = useState({ hdd: true });
   const [scalewayStorage, setScalewayStorage] = useState({
     multi: true,
-    single: false,
   });
 
   const handlerStorageVal = (e) => {
@@ -105,7 +104,7 @@ function Home() {
     resultVultrCom,
   };
 
-  console.log(bunnyStorage);
+  
   return (
     <AppContext.Provider value={value}>
       <Head>

@@ -5,7 +5,7 @@ const StorageTransfer = () => {
   const store = useContext(AppContext);
   const { storage, transfer, handlerStorageVal, handlerTransferVal } = store;
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:top-[30px] sm:left-[40px] bottom-[10px] left-[20%] absolute">
+    <div className="flex flex-col sm:flex-row gap-4 sm:top-[30px] sm:left-[40px] bottom-[30px] left-[20%] absolute">
       <div className="flex flex-col">
         <div>Storage: {storage} GB</div>
         <input
