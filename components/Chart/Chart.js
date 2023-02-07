@@ -17,7 +17,7 @@ const Chart = () => {
     resultVultrCom()
   );
 
-  const bgColorBacklaze = 
+  const bgColorBacklaze =
     resultBacklazeCom() === minPrice ? "bg-red" : "bg-gray";
 
   const bgColorBunny = resultBunnyNet() === minPrice ? "bg-red" : "bg-gray";
