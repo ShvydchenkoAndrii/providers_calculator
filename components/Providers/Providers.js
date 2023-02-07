@@ -23,7 +23,7 @@ const Providers = () => {
               defaultChecked={bunnyStorage.hdd}
               onChange={() => setBunnyStorage({ hdd: true })}
             ></input>
-            <span> HDD</span>
+            HDD
           </label>
           <label className="sm:text-xs text-[10px]">
             <input
@@ -33,7 +33,7 @@ const Providers = () => {
               value="sdd"
               onChange={() => setBunnyStorage({ hdd: false })}
             ></input>
-            <span> SSD</span>
+            SSD
           </label>
         </div>
       </div>
@@ -48,7 +48,7 @@ const Providers = () => {
               name="scaleway"
               value="multi"
             ></input>
-            <span> Multi</span>
+            Multi
           </label>
           <label className="sm:text-xs text-[10px] mr-3">
             <input
@@ -59,7 +59,7 @@ const Providers = () => {
               value="single"
               defaultChecked={!scalewayStorage.multi}
             ></input>
-            <span> Single</span>
+            Single
           </label>
         </div>
       </div>

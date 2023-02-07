@@ -10,59 +10,28 @@ const Chart = () => {
     resultVultrCom,
   } = store;
 
-  const bgColorBack = () => {
-    if (
-      resultBacklazeCom() < resultBunnyNet() &&
-      resultBacklazeCom() < resultScalewayCom() &&
-      resultBacklazeCom() < resultVultrCom()
-    ) {
-      return "bg-red";
-    } else {
-      return "bg-gray";
-    }
-  };
+  const minPrice = Math.min(
+    resultBacklazeCom(),
+    resultBunnyNet(),
+    resultScalewayCom(),
+    resultVultrCom()
+  );
 
-  const bgColorBunny = () => {
-    if (
-      resultBunnyNet() < resultBacklazeCom() &&
-      resultBunnyNet() < resultScalewayCom() &&
-      resultBunnyNet() < resultVultrCom()
-    ) {
-      return "bg-red";
-    } else {
-      return "bg-gray";
-    }
-  };
+  const bgColorBacklaze = 
+    resultBacklazeCom() === minPrice ? "bg-red" : "bg-gray";
 
-  const bgColorScale = () => {
-    if (
-      resultScalewayCom() < resultBacklazeCom() &&
-      resultScalewayCom() < resultBunnyNet() &&
-      resultScalewayCom() < resultVultrCom()
-    ) {
-      return "bg-red";
-    } else {
-      return "bg-gray";
-    }
-  };
+  const bgColorBunny = resultBunnyNet() === minPrice ? "bg-red" : "bg-gray";
 
-  const bgColorVultr = () => {
-    if (
-      resultVultrCom() < resultBacklazeCom() &&
-      resultVultrCom() < resultBunnyNet() &&
-      resultVultrCom() < resultScalewayCom()
-    ) {
-      return "bg-red";
-    } else {
-      return "bg-gray";
-    }
-  };
-  
+  const bgColorScaleway =
+    resultScalewayCom() === minPrice ? "bg-red" : "bg-gray";
+
+  const bgColorVultr = resultVultrCom() === minPrice ? "bg-red" : "bg-gray";
+
   return (
     <div className="sm:flex sm:flex-col h-[350px] sm:h-[273px] sm:w-0 w-[450px] items-start sm:ml-3 -ml-2 border-l-2 sm:rotate-0 -rotate-90">
       <div className="flex ">
         <div
-          className={`${bgColorBack()} my-9 sm:my-2`}
+          className={`${bgColorBacklaze} my-9 sm:my-2`}
           style={{
             width: `${resultBacklazeCom() * 4}px`,
             height: "30px",
@@ -74,7 +43,7 @@ const Chart = () => {
       </div>
       <div className="flex sm:top-[70px]">
         <div
-          className={`${bgColorBunny()} my-6 sm:my-9`}
+          className={`${bgColorBunny} my-6 sm:my-9`}
           style={{ width: `${resultBunnyNet() * 4}px`, height: "30px" }}
         ></div>
         <div className="sm:my-9 my-6 sm:rotate-0 rotate-90">
@@ -83,7 +52,7 @@ const Chart = () => {
       </div>
       <div className="flex sm:top-40">
         <div
-          className={`${bgColorScale()} sm:my-4 my-10`}
+          className={`${bgColorScaleway} sm:my-4 my-10`}
           style={{
             width: `${resultScalewayCom() * 4}px`,
             height: "30px",
@@ -95,7 +64,7 @@ const Chart = () => {
       </div>
       <div className="flex sm:top-60">
         <div
-          className={`${bgColorVultr()} sm:my-7 my-5`}
+          className={`${bgColorVultr} sm:my-7 my-5`}
           style={{ width: `${resultVultrCom() * 4}px`, height: "25px" }}
         ></div>
         <div className="sm:my-7 my-5 sm:rotate-0 rotate-90">

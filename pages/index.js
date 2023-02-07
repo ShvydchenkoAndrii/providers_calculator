@@ -110,7 +110,7 @@ function Home() {
         <title>Providers calculator</title>
       </Head>
       <div>
-        <div className="hidden items-start m-10 static w-full sm:flex">
+        <div className="hidden items-start m-10 w-full sm:flex">
           <Desktop />
         </div>
         <div className="flex sm:hidden">
