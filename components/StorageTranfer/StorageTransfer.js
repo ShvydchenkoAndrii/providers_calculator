@@ -3,7 +3,7 @@ import { AppContext } from "../../pages";
 
 const StorageTransfer = () => {
   const store = useContext(AppContext);
-  const { storage, transfer, storageVal, transferVal } = store;
+  const { storage, transfer, handlerStorageVal, handlerTransferVal } = store;
   return (
     <div className="flex justify-around gap-10 sm:top-[30px] bottom-[40px] left-[80px] absolute">
       <div className="flex flex-col">
@@ -16,7 +16,7 @@ const StorageTransfer = () => {
           max={1000}
           step={1}
           defaultValue={storage}
-          // onChange={(event) => storageVal(event)}
+          onChange={(event) => handlerStorageVal(event)}
         ></input>
       </div>
       <div className="flex flex-col">
@@ -29,7 +29,7 @@ const StorageTransfer = () => {
           min={0}
           max={1000}
           defaultValue={transfer}
-          onChange={(event) => transferVal(event)}
+          onChange={(event) => handlerTransferVal(event)}
         ></input>
       </div>
     </div>
