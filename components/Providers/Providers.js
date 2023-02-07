@@ -5,8 +5,9 @@ const Providers = () => {
   const store = useContext(AppContext);
   const { bunnyStorage, scalewayStorage, setBunnyStorage, setScalewayStorage } =
     store;
+
   return (
-    <div className="flex sm:flex-col sm:gap-10 gap-4 sm:left-0 sm:top-0 left-10 bottom-[100px] sm:relative absolute">
+    <div className="flex sm:flex-col sm:gap-10 gap-[10px] sm:left-0 sm:top-0 left-[5%] bottom-[120px] sm:relative absolute">
       <div className="sm:text-[18px] text-[14px]">
         <div>backlaze.com</div>
       </div>
@@ -15,22 +16,22 @@ const Providers = () => {
         <div>
           <label className="sm:text-[12px] text-[10px] mr-3 ">
             <input
-              onChange={() => setBunnyStorage({ hdd: true, sdd: false })}
               type="radio"
               id="hdd"
               name="hdd-ssd"
               value="hdd"
               checked={bunnyStorage.hdd}
+              onChange={() => setBunnyStorage({ hdd: true, sdd: false })}
             ></input>
             <span> HDD</span>
           </label>
           <label className="sm:text-[12px] text-[10px]">
             <input
-              onChange={() => setBunnyStorage({ hdd: false, sdd: true })}
               type="radio"
               id="ssd"
               name="hdd-ssd"
               value="sdd"
+              onChange={() => setBunnyStorage({ hdd: false, sdd: true })}
             ></input>
             <span> SSD</span>
           </label>

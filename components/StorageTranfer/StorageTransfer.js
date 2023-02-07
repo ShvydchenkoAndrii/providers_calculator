@@ -5,7 +5,7 @@ const StorageTransfer = () => {
   const store = useContext(AppContext);
   const { storage, transfer, handlerStorageVal, handlerTransferVal } = store;
   return (
-    <div className="flex justify-around gap-10 sm:top-[30px] bottom-[40px] left-[80px] absolute">
+    <div className="flex flex-col sm:flex-row gap-4 sm:top-[30px] sm:left-[40px] bottom-[10px] left-[20%] absolute">
       <div className="flex flex-col">
         <div>Storage: {storage} GB</div>
         <input
@@ -19,7 +19,7 @@ const StorageTransfer = () => {
           onChange={(event) => handlerStorageVal(event)}
         ></input>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col sm:w-full w-[250px]">
         <div>Transfer: {transfer} GB</div>
         <input
           type="range"

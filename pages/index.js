@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Desktop from "../components/Desktop/Desktop";
 import Mobile from "../components/Mobile/Mobile";
 
@@ -105,6 +105,7 @@ function Home() {
     resultVultrCom,
   };
 
+  console.log(bunnyStorage);
   return (
     <AppContext.Provider value={value}>
       <Head>
