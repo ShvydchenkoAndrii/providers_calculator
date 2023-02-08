@@ -26,8 +26,7 @@ const Chart = () => {
     resultScalewayCom() === minPrice ? "bg-red" : "bg-gray";
 
   const bgColorVultr = resultVultrCom() === minPrice ? "bg-red" : "bg-gray";
-  console.log(minPrice);
-  console.log(resultBacklazeCom());
+
   return (
     <div className="sm:flex sm:flex-col h-[350px] sm:h-[273px] sm:w-0 w-[450px] items-start sm:ml-3 -ml-2 border-l-2 sm:rotate-0 -rotate-90">
       <div className="flex ">

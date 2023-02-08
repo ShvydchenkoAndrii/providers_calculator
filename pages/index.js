@@ -64,19 +64,15 @@ function Home() {
   };
 
   const resultScalewayCom = () => {
-    const result = providers.scalewayCom.map((item) => {
-      if (storage <= 75 || transfer <= 75) {
-        return 0;
-      } else {
-        return (
-          (scalewayStorage.multi
-            ? item.storagePriceMulti
-            : item.storagePriceSingle) *
-            (storage - 75) +
-          item.transferPrice * (transfer - 75)
-        );
-      }
-    });
+    const result = providers.scalewayCom.map(
+      (item) =>
+        (scalewayStorage.multi
+          ? item.storagePriceMulti
+          : item.storagePriceSingle) *
+          (storage <= 75 ? 0 : storage - 75) +
+        item.transferPrice * (transfer <= 75 ? 0 : transfer - 75)
+    );
+
     return result[0].toFixed(2);
   };
 
